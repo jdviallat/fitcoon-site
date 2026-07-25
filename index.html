@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fitcoon — Ton carnet d'entraînement, 100 % privé & hors-ligne</title>
+<meta name="description" content="Fitcoon : carnet d'entraînement musculation & cardio, gratuit, 100 % hors-ligne et respectueux de ta vie privée. Coach intelligent, exercices animés, programmes, progression, mode salle et suppléments.">
+<style>
+  :root{
+    --deep:#1B1633; --deep2:#241C4B; --deep3:#3A2E86;
+    --lav:#6C5CE0; --lavB:#8F7BFF; --lavInk:#4A3DAF;
+    --sage:#5FA97E; --sageB:#7FC79C; --sageInk:#3E7D5B;
+    --coral:#FF6B5E; --coralW:#FF8A5B; --gold:#E8B94E;
+    --paper:#F7F6FB; --card:#FFFFFF; --ink:#171526; --mut:#6E6A85; --line:#E7E4F2;
+    --lavT:rgba(108,92,224,.10); --sageT:rgba(95,169,126,.13); --goldT:rgba(232,185,78,.16);
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .grad-txt{background:linear-gradient(90deg,#B7A9FF,#8FE3B0);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:20;background:rgba(27,22,51,.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+  nav .wrap{display:flex;align-items:center;gap:18px;height:62px}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:17px}
+  .brand .mk{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--lavB),var(--lav));display:flex;align-items:center;justify-content:center;font-size:16px}
+  .brand small{display:block;font-size:10px;font-weight:600;color:#A99BE0;letter-spacing:.4px}
+  nav .links{margin-left:auto;display:flex;gap:22px;align-items:center}
+  nav .links a{color:#CFC9EF;font-size:14px;font-weight:600}
+  nav .links a:hover{color:#fff}
+  nav .cta{background:linear-gradient(120deg,var(--lav),var(--lavB));color:#fff !important;padding:9px 16px;border-radius:999px;font-weight:800;font-size:13px}
+  @media(max-width:720px){nav .links a:not(.cta){display:none}}
+
+  /* HERO */
+  header{position:relative;overflow:hidden;color:#fff;
+    background:radial-gradient(120% 90% at 15% 0%,#3A2E86 0%,var(--deep2) 45%,var(--deep) 100%)}
+  .orb{position:absolute;border-radius:50%;filter:blur(6px);pointer-events:none}
+  .o1{width:420px;height:420px;top:-160px;right:-120px;background:radial-gradient(circle,rgba(143,123,255,.5),transparent 70%)}
+  .o2{width:340px;height:340px;bottom:-160px;left:-120px;background:radial-gradient(circle,rgba(127,199,156,.42),transparent 70%)}
+  .o3{width:180px;height:180px;top:120px;left:40%;background:radial-gradient(circle,rgba(255,138,91,.3),transparent 70%)}
+  .hero{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;padding:64px 0 76px}
+  @media(max-width:860px){.hero{grid-template-columns:1fr;text-align:center;padding:48px 0 56px}}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);
+    border-radius:999px;padding:6px 13px;font-size:12.5px;font-weight:700;color:#D9D4F2;margin-bottom:18px}
+  h1{font-size:46px;font-weight:900;letter-spacing:-1.2px;line-height:1.05}
+  @media(max-width:860px){h1{font-size:34px}}
+  .sub{margin:18px 0 26px;font-size:17px;color:#C9C2E8;max-width:33ch}
+  @media(max-width:860px){.sub{margin-left:auto;margin-right:auto}}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  @media(max-width:860px){.btns{justify-content:center}}
+  .store{display:inline-flex;align-items:center;gap:11px;border-radius:14px;padding:12px 18px;font-weight:800}
+  .store small{display:block;font-size:10px;font-weight:600;opacity:.85}
+  .store b{font-size:15px}
+  .store.play{background:#fff;color:var(--ink)}
+  .store.ios{background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.2)}
+  .store .ic{font-size:22px}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+  @media(max-width:860px){.badges{justify-content:center}}
+  .badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700;color:#CFC9EF}
+
+  /* PHONE MOCKUP */
+  .phone{justify-self:center;width:250px;height:520px;border-radius:38px;border:9px solid #06040f;position:relative;overflow:hidden;
+    box-shadow:0 30px 70px rgba(0,0,0,.5);background:var(--paper)}
+  @media(max-width:860px){.phone{margin-top:8px;transform:scale(.92)}}
+  .ph-hero{padding:40px 16px 22px;color:#fff;background:radial-gradient(120% 90% at 20% 0%,#3A2E86,#241C4B 60%,#1B1633)}
+  .ph-hero .d{font-size:9px;letter-spacing:1.5px;color:#B4ADD6;font-weight:800}
+  .ph-hero .t{font-size:19px;font-weight:900;margin:4px 0 14px;line-height:1.1}
+  .ph-hero .t em{font-style:normal;color:#8FE3B0}
+  .ring{width:64px;height:64px;border-radius:50%;background:conic-gradient(from 210deg,#8F7BFF 0 68%,rgba(255,255,255,.15) 68%);display:flex;align-items:center;justify-content:center;position:relative}
+  .ring::after{content:"";position:absolute;inset:7px;border-radius:50%;background:#241C4B}
+  .ring b{position:relative;z-index:1;font-size:19px;font-weight:900;color:#CFC5FF}
+  .ph-cta{margin:14px 12px 0;border-radius:16px;padding:12px 14px;color:#fff;background:linear-gradient(120deg,var(--coral),var(--coralW));font-weight:800;font-size:13px}
+  .ph-cta small{display:block;font-size:10px;opacity:.9;font-weight:600}
+  .ph-tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px}
+  .ph-tile{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px}
+  .ph-tile b{font-size:17px;font-weight:900}
+  .ph-tile small{display:block;font-size:9px;color:var(--mut);font-weight:700}
+
+  /* STRIP */
+  .strip{background:var(--deep);color:#fff;border-top:1px solid rgba(255,255,255,.06)}
+  .strip .wrap{display:flex;justify-content:space-around;gap:16px;flex-wrap:wrap;padding:22px 22px}
+  .stat{text-align:center}
+  .stat b{font-size:26px;font-weight:900;display:block;background:linear-gradient(90deg,#CFC5FF,#A9E8C3);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat small{font-size:12px;color:#A99BE0;font-weight:700}
+
+  /* SECTIONS */
+  section{padding:72px 0}
+  .kicker{color:var(--lavInk);font-weight:900;font-size:13px;letter-spacing:.6px;text-transform:uppercase}
+  h2{font-size:32px;font-weight:900;letter-spacing:-.6px;margin:8px 0 10px}
+  .lead{color:var(--mut);font-size:16px;max-width:60ch}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+  @media(max-width:860px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 10px 30px rgba(23,21,38,.05)}
+  .feat .em{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:23px;margin-bottom:12px}
+  .feat h3{font-size:17px;font-weight:800;margin-bottom:5px}
+  .feat p{font-size:13.5px;color:var(--mut)}
+  .e-lav{background:var(--lavT)}.e-sage{background:var(--sageT)}.e-gold{background:var(--goldT)}.e-coral{background:rgba(255,107,94,.12)}
+
+  /* PRIVACY BAND */
+  .band{background:radial-gradient(120% 120% at 80% 0%,#3A2E86,#241C4B 55%,#1B1633);color:#fff;border-radius:28px;padding:40px 34px;position:relative;overflow:hidden}
+  .band h2{font-size:28px}
+  .band p{color:#C9C2E8;max-width:56ch;margin-top:10px}
+  .pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+  .pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700}
+
+  /* VERSIONS */
+  .vlist{margin-top:30px;display:grid;gap:12px}
+  .vrow{display:grid;grid-template-columns:120px 1fr;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+  @media(max-width:560px){.vrow{grid-template-columns:1fr;gap:4px}}
+  .vrow .v{font-weight:900;color:var(--lavInk)}
+  .vrow .v small{display:block;color:var(--mut);font-weight:600;font-size:12px}
+  .vrow p{font-size:14px;color:#3E3A55}
+  .more{display:inline-block;margin-top:18px;font-weight:800;color:var(--lavInk)}
+
+  /* DOWNLOAD */
+  .dl{background:linear-gradient(120deg,var(--lav),var(--lavB));color:#fff;border-radius:28px;padding:44px 34px;text-align:center}
+  .dl h2{font-size:30px}
+  .dl p{color:rgba(255,255,255,.92);margin:8px auto 24px;max-width:48ch}
+  .dl .btns{justify-content:center}
+  .dl .store.play{background:#fff;color:var(--ink)}
+  .dl .store.ios{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.35)}
+
+  /* FOOTER */
+  footer{background:var(--deep);color:#B4ADD6;padding:44px 0 40px;font-size:13.5px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
+  footer a{color:#CFC9EF;font-weight:600}
+  footer a:hover{color:#fff}
+  footer .flinks{display:flex;gap:20px;flex-wrap:wrap}
+  .disc{margin-top:22px;color:#7E77A6;font-size:12px;max-width:70ch}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="mk">📊</span><span>Fitcoon<small>par Bengacoon</small></span></a>
+    <div class="links">
+      <a href="#fonctions">Fonctions</a>
+      <a href="#confidentialite">Vie privée</a>
+      <a href="#versions">Versions</a>
+      <a class="cta" href="#telecharger">Télécharger</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
+  <div class="wrap hero">
+    <div>
+      <span class="eyebrow">💪 Musculation & cardio · 100 % gratuit</span>
+      <h1>Ton carnet d'entraînement.<br><span class="grad-txt">Privé. Hors-ligne.</span></h1>
+      <p class="sub">Suis tes séances, progresse avec un vrai coach, et garde tout sur ton téléphone. Sans pub, sans abonnement, sans compte.</p>
+      <div class="btns">
+        <a class="store play" href="https://play.google.com/store/apps/details?id=com.fitprogress.studio">
+          <span class="ic">▶</span><span><small>Disponible sur</small><b>Google Play</b></span>
+        </a>
+        <a class="store ios" href="#telecharger">
+          <span class="ic"></span><span><small>Bientôt sur</small><b>App Store</b></span>
+        </a>
+      </div>
+      <div class="badges">
+        <span class="badge">🔒 0 donnée collectée</span>
+        <span class="badge">📶 100 % hors-ligne</span>
+        <span class="badge">🌍 9 langues</span>
+        <span class="badge">🚫 Sans publicité</span>
+      </div>
+    </div>
+    <div class="phone" aria-hidden="true">
+      <div class="ph-hero">
+        <div class="d">JEUDI 24 JUILLET</div>
+        <div class="t">Prêt à<br><em>tout casser ?</em></div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <div class="ring"><b>68</b></div>
+          <div style="font-size:11px;color:#C9C2E8;font-weight:700">🔥 3 sem.<br>🎯 2/3<br>🏋️ 4 320 kg</div>
+        </div>
+      </div>
+      <div class="ph-cta">⚡ SÉANCE DU JOUR<br><span style="font-size:15px">Push — Pecs &amp; épaules</span><small>6 exercices · ~45 min</small></div>
+      <div class="ph-tiles">
+        <div class="ph-tile"><b>12</b><small>Séances</small></div>
+        <div class="ph-tile"><b>3</b><small>Records</small></div>
+        <div class="ph-tile"><b>8 940</b><small>Calories</small></div>
+        <div class="ph-tile"><b>96 min</b><small>Cardio</small></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="stat"><b>100+</b><small>exercices animés</small></div>
+    <div class="stat"><b>0 €</b><small>gratuit, sans pub</small></div>
+    <div class="stat"><b>9</b><small>langues</small></div>
+    <div class="stat"><b>100 %</b><small>hors-ligne</small></div>
+  </div>
+</div>
+
+<section id="fonctions">
+  <div class="wrap">
+    <span class="kicker">Ce que fait Fitcoon</span>
+    <h2>Tout ton entraînement, dans une seule app</h2>
+    <p class="lead">Du suivi de tes séries à la progression long terme, en passant par un coach qui te dit quoi soulever la prochaine fois — sans qu'un octet ne quitte ton téléphone.</p>
+    <div class="grid">
+      <div class="feat"><div class="em e-lav">🏋️</div><h3>Séances guidées</h3><p>Séries, charges, RPE, façons d'exécution, minuteur de repos fiable même écran éteint. Ajoute/retire des exercices en direct, filtrés par muscle.</p></div>
+      <div class="feat"><div class="em e-sage">🧠</div><h3>Coach intelligent</h3><p>Surcharge progressive (+2,5 kg, +1 rep…), échauffement automatique, disques à monter sur la barre, records par répétitions.</p></div>
+      <div class="feat"><div class="em e-gold">💪</div><h3>Exercices animés</h3><p>~100 exercices avec petits personnages en mouvement, vrais filtres, carte musculaire anatomique et variations illustrées.</p></div>
+      <div class="feat"><div class="em e-lav">🗂️</div><h3>Programmes & générateur</h3><p>Programmes périodisés en couvertures visuelles, assistant de recommandation, et générateur de séance sur mesure.</p></div>
+      <div class="feat"><div class="em e-coral">📈</div><h3>Progression & bilans</h3><p>Courbes par exercice/muscle, radar d'équilibre, récupération musculaire, bilan hebdo et objectifs long terme.</p></div>
+      <div class="feat"><div class="em e-sage">🔊</div><h3>Mode salle mains libres</h3><p>Gros boutons, écran maintenu allumé et annonces vocales : « Série 3 : 62,5 kg, 8 répétitions ». Le téléphone reste posé.</p></div>
+      <div class="feat"><div class="em e-gold">💊</div><h3>Suppléments</h3><p>Protéine, gélules, gouttes, liquides : photo, dose, rappels, option « après la séance » et barre de stock (« il reste X jours »).</p></div>
+      <div class="feat"><div class="em e-lav">⌚</div><h3>Objets connectés</h3><p>Health Connect (montres Android) et Fitbit pour importer poids et activités. Apple Watch sur la version iPhone.</p></div>
+      <div class="feat"><div class="em e-coral">🔗</div><h3>Partage & Duo</h3><p>Partage une séance en image pour tes réseaux, ou un programme entier par QR code — toujours sans serveur.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="confidentialite" style="padding-top:0">
+  <div class="wrap">
+    <div class="band">
+      <span class="orb o1" style="opacity:.6"></span>
+      <span class="kicker" style="color:#A9E8C3">Vie privée d'abord</span>
+      <h2>Tes données restent sur ton téléphone</h2>
+      <p>Fitcoon fonctionne entièrement hors ligne. L'application ne collecte aucune donnée, ne contient aucune publicité ni traceur. Tes entraînements, ton poids, tes photos de progression — tout est stocké localement, et tu peux tout supprimer à tout moment.</p>
+      <div class="pill-row">
+        <span class="pill">✅ Aucune donnée collectée</span>
+        <span class="pill">✅ Aucun traceur</span>
+        <span class="pill">✅ Sauvegarde locale</span>
+        <span class="pill">✅ Fonctionne sans réseau</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="versions" style="padding-top:0">
+  <div class="wrap">
+    <span class="kicker">Toujours en mouvement</span>
+    <h2>Les dernières versions</h2>
+    <p class="lead">Fitcoon évolue vite. Voici les nouveautés récentes — l'historique complet est sur GitHub.</p>
+    <div class="vlist">
+      <div class="vrow"><div class="v">5.11 <small>Suppléments</small></div><p>Nouveau module suppléments (protéine, gélules, gouttes…) : photo, dose, rappels, option « après la séance » et barre de stock.</p></div>
+      <div class="vrow"><div class="v">5.10 <small>Accueil & partage</small></div><p>Tour de bienvenue au premier lancement et partage d'une séance en image pour tes réseaux.</p></div>
+      <div class="vrow"><div class="v">5.9 <small>Salle & Duo</small></div><p>Mode salle mains libres (voix), Fitcoon Duo (partage par QR code), connexion Fitbit.</p></div>
+      <div class="vrow"><div class="v">5.7 <small>Bilan & objectifs</small></div><p>Bilan hebdomadaire automatique, radar d'équilibre musculaire, objectifs long terme, widget d'accueil.</p></div>
+      <div class="vrow"><div class="v">5.6 <small>Coach</small></div><p>Surcharge progressive, échauffement automatique, disques sur la barre, records par répétitions, recherche globale.</p></div>
+      <div class="vrow"><div class="v">5.4 <small>Refonte visuelle</small></div><p>Nouvel accueil, bibliothèque à vrais filtres, fiche exercice premium, programmes en couvertures.</p></div>
+    </div>
+    <a class="more" href="https://github.com/jdviallat/fitcoon/blob/main/CHANGELOG.md">Voir tout l'historique des versions →</a>
+  </div>
+</section>
+
+<section id="telecharger" style="padding-top:0">
+  <div class="wrap">
+    <div class="dl">
+      <h2>Prêt à t'entraîner ?</h2>
+      <p>Télécharge Fitcoon, garde tes progrès pour toi, et laisse le coach s'occuper du reste. Gratuit, pour toujours.</p>
+      <div class="btns">
+        <a class="store play" href="https://play.google.com/store/apps/details?id=com.fitprogress.studio">
+          <span class="ic">▶</span><span><small>Disponible sur</small><b>Google Play</b></span>
+        </a>
+        <a class="store ios" href="https://github.com/jdviallat/fitcoon/releases">
+          <span class="ic">⬇</span><span><small>Ou</small><b>APK direct (GitHub)</b></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#top" style="margin-bottom:8px"><span class="mk">📊</span><span>Fitcoon<small>par Bengacoon</small></span></a>
+      <div style="margin-top:8px">Disponible en 9 langues · 100 % gratuit · hors-ligne</div>
+    </div>
+    <div class="flinks">
+      <a href="https://github.com/jdviallat/fitcoon/blob/main/FONCTIONNALITES.md">Fonctionnalités</a>
+      <a href="https://github.com/jdviallat/fitcoon/blob/main/CHANGELOG.md">Versions</a>
+      <a href="https://github.com/jdviallat/fitcoon/blob/main/PRIVACY.md">Confidentialité</a>
+      <a href="https://github.com/jdviallat/fitcoon">GitHub</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="disc">Fitcoon est une application de remise en forme et ne remplace pas l'avis d'un professionnel de santé. © 2026 Bengacoon. Google Play et le logo Google Play sont des marques de Google LLC.</p>
+  </div>
+</footer>
+
+</body>
+</html>
