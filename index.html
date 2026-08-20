@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fitcoon — Ton carnet d'entraînement, 100 % privé & hors-ligne</title>
+<link rel="icon" href="assets/favicon.png">
+<meta property="og:title" content="Fitcoon — Ton carnet d'entraînement, 100 % privé">
+<meta property="og:image" content="https://jdviallat.github.io/fitcoon-site/assets/icon.png">
 <meta name="description" content="Fitcoon : carnet d'entraînement musculation & cardio, gratuit, 100 % hors-ligne et respectueux de ta vie privée. Coach intelligent, exercices animés, programmes, progression, mode salle et suppléments.">
 <style>
   :root{
@@ -27,7 +30,7 @@
   nav{position:sticky;top:0;z-index:20;background:rgba(27,22,51,.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
   nav .wrap{display:flex;align-items:center;gap:18px;height:62px}
   .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:17px}
-  .brand .mk{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--lavB),var(--lav));display:flex;align-items:center;justify-content:center;font-size:16px}
+  .brand .mk{width:30px;height:30px;border-radius:9px;object-fit:cover;display:block}
   .brand small{display:block;font-size:10px;font-weight:600;color:#A99BE0;letter-spacing:.4px}
   nav .links{margin-left:auto;display:flex;gap:22px;align-items:center}
   nav .links a{color:#CFC9EF;font-size:14px;font-weight:600}
@@ -138,7 +141,7 @@
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="#top"><span class="mk">📊</span><span>Fitcoon<small>par Bengacoon</small></span></a>
+    <a class="brand" href="#top"><img class="mk" src="assets/icon.png" alt="Fitcoon"><span>Fitcoon<small>par Bengacoon</small></span></a>
     <div class="links">
       <a href="#fonctions">Fonctions</a>
       <a href="#confidentialite">Vie privée</a>
@@ -272,13 +275,13 @@
 <footer>
   <div class="wrap">
     <div>
-      <a class="brand" href="#top" style="margin-bottom:8px"><span class="mk">📊</span><span>Fitcoon<small>par Bengacoon</small></span></a>
+      <a class="brand" href="#top" style="margin-bottom:8px"><img class="mk" src="assets/icon.png" alt="Fitcoon"><span>Fitcoon<small>par Bengacoon</small></span></a>
       <div style="margin-top:8px">Disponible en 9 langues · 100 % gratuit · hors-ligne</div>
     </div>
     <div class="flinks">
       <a href="https://github.com/jdviallat/fitcoon/blob/main/FONCTIONNALITES.md">Fonctionnalités</a>
       <a href="https://github.com/jdviallat/fitcoon/blob/main/CHANGELOG.md">Versions</a>
-      <a href="https://github.com/jdviallat/fitcoon/blob/main/PRIVACY.md">Confidentialité</a>
+      <a href="privacy.html">Confidentialité</a>
       <a href="https://github.com/jdviallat/fitcoon">GitHub</a>
     </div>
   </div>
