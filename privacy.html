@@ -16,6 +16,16 @@
   header img{width:32px;height:32px;border-radius:9px}
   header .brand{font-weight:800}
   header a{margin-left:auto;color:#CFC9EF;text-decoration:none;font-size:14px;font-weight:600}
+  nav{position:sticky;top:0;z-index:20;background:rgba(27,22,51,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+  nav .wrap{display:flex;align-items:center;gap:18px;height:62px;max-width:1080px}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:17px;text-decoration:none}
+  .brand .mk{width:30px;height:30px;border-radius:9px;object-fit:cover;display:block}
+  .brand small{display:block;font-size:10px;font-weight:600;color:#A99BE0;letter-spacing:.4px}
+  nav .links{margin-left:auto;display:flex;gap:22px;align-items:center}
+  nav .links a{color:#CFC9EF;font-size:14px;font-weight:600;text-decoration:none}
+  nav .links a:hover{color:#fff}
+  nav .cta{background:linear-gradient(120deg,var(--lav),var(--lavB));color:#fff !important;padding:9px 16px;border-radius:999px;font-weight:800;font-size:13px}
+  @media(max-width:720px){nav .links a:not(.cta){display:none}}
   main{padding:44px 0 60px}
   h1{font-size:30px;font-weight:900;letter-spacing:-.6px;margin-bottom:6px}
   .maj{color:var(--mut);font-size:13px;margin-bottom:26px}
@@ -28,13 +38,16 @@
 </style>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <img src="assets/icon.png" alt="Fitcoon">
-    <span class="brand">Fitcoon</span>
-    <a href="index.html">← Accueil</a>
+<nav><div class="wrap">
+  <a class="brand" href="index.html"><img class="mk" src="assets/icon.png" alt="Fitcoon"><span>Fitcoon<small>par Bengacoon</small></span></a>
+  <div class="links">
+    <a href="index.html#fonctions">Fonctions</a>
+    <a href="docs.html">Guide</a>
+    <a href="index.html#confidentialite">Vie privée</a>
+    <a href="index.html#versions">Versions</a>
+    <a class="cta" href="index.html#telecharger">Télécharger</a>
   </div>
-</header>
+</div></nav>
 <main>
   <div class="wrap">
     <h1>Politique de confidentialité</h1>
