@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fitcoon — Guide complet : tout ce que tu peux faire</title>
-<meta name="description" content="Documentation complète de Fitcoon : entraînement, callisthénie, mon matériel, suivi de progression, cardio, santé, données 100 % privées. Comment utiliser chaque fonction.">
+<title>Fitcoon — Guide complet</title>
+<meta name="description" content="Fitcoon est ton carnet d'entraînement complet — musculation, callisthénie, cardio — 100 % privé et hors-ligne. Voici chaque fonction et comment l'utiliser.">
 <style>
   :root{
     --deep:#1B1633; --deep2:#241C4B; --deep3:#3A2E86;
@@ -70,8 +70,25 @@
   footer a{color:#CFC9EF;font-weight:700}
   .cta{display:inline-block;margin-top:8px;background:linear-gradient(120deg,var(--lav),var(--lavB));color:#fff !important;
     padding:11px 20px;border-radius:999px;font-weight:800;font-size:14px}
+
+  .langbar{display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 12px}
+  .langbar .lic{font-size:15px;line-height:1}
+  .langbar select{appearance:none;-webkit-appearance:none;background:transparent;border:0;color:#EDE9FB;
+    font-size:14px;font-weight:700;padding:2px 22px 2px 4px;cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23EDE9FB' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center}
+  .langbar select:focus{outline:2px solid var(--lavB);outline-offset:2px;border-radius:6px}
+  .langbar select option{color:#171526}
+
+  .langbar{display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 12px}
+  .langbar .lic{font-size:15px;line-height:1}
+  .langbar select{appearance:none;-webkit-appearance:none;background:transparent;border:0;color:#EDE9FB;
+    font-size:14px;font-weight:700;padding:2px 22px 2px 4px;cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23EDE9FB' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center}
+  .langbar select:focus{outline:2px solid var(--lavB);outline-offset:2px;border-radius:6px}
+  .langbar select option{color:#171526}
 </style>
-</head>
 <body>
 
 <nav><div class="wrap">
@@ -89,28 +106,28 @@
   <span class="eyebrow">📖 Guide complet</span>
   <h1>Tout ce que tu peux faire avec <span class="grad-txt">Fitcoon</span></h1>
   <p>Fitcoon est ton carnet d'entraînement complet — musculation, callisthénie, cardio — 100 % privé et hors-ligne. Voici chaque fonction et comment l'utiliser.</p>
+  <div class="langbar"><span class="lic">🌐</span><select aria-label="Langue" onchange="if(this.value)location.href=this.value"><option value="docs.html" selected>Français</option><option value="docs-en.html">English</option><option value="docs-de.html">Deutsch</option><option value="docs-it.html">Italiano</option><option value="docs-pt.html">Português</option><option value="docs-es.html">Español</option><option value="docs-sv.html">Svenska</option><option value="docs-no.html">Norsk</option><option value="docs-fi.html">Suomi</option></select></div>
   <div class="toc">
     <a href="#entrainement">🏋️ Entraînement</a>
     <a href="#materiel">🧰 Mon matériel</a>
     <a href="#callisthenie">🤸 Callisthénie</a>
-    <a href="#suivi">📈 Suivi & progression</a>
-    <a href="#cardio">🏃 Cardio & plein air</a>
-    <a href="#sante">🩺 Santé & récup</a>
-    <a href="#coaching">🎯 Programmes & coaching</a>
-    <a href="#social">🤝 Social</a>
+    <a href="#suivi">📈 Suivi &amp; progression</a>
+    <a href="#cardio">🏃 Cardio &amp; plein air</a>
+    <a href="#sante">🩺 Santé &amp; récupération</a>
+    <a href="#coaching">🎯 Programmes &amp; coaching</a>
+    <a href="#social">🤝 Social &amp; motivation</a>
     <a href="#perso">🎨 Personnalisation</a>
-    <a href="#donnees">🔒 Données & confidentialité</a>
+    <a href="#donnees">🔒 Données &amp; confidentialité</a>
   </div>
 </div></header>
 
 <main class="wrap">
-
   <section id="entrainement">
     <div class="sec-head"><span class="sec-ic">🏋️</span><h2>Entraînement</h2></div>
     <p class="lead">Crée, génère et lance tes séances de musculation et de poids du corps.</p>
     <div class="grid">
       <div class="feat"><h3>🗂️ Programmes</h3><p>Des dizaines de programmes prêts à l'emploi (force, prise de masse, sèche, débutant, powerlifting, callisthénie…), multi-semaines.</p><span class="how">Onglet Programmes → choisis → démarre</span></div>
-      <div class="feat"><h3>🏋️ Séances</h3><p>Tes séances enregistrées + des séances toutes prêtes. Filtre par muscle, durée, origine et <b>contexte Callisthénie / Salle / Maison</b>. <span class="new">NOUVEAU</span></p><span class="how">Onglet Séances → filtre → démarre</span></div>
+      <div class="feat"><h3>🏋️ Séances</h3><p>Tes séances enregistrées + des séances toutes prêtes. Filtre par muscle, durée, origine et <b>contexte Callisthénie / Salle / Maison</b>. <span class="new">NEW</span></p><span class="how">Onglet Séances → filtre → démarre</span></div>
       <div class="feat"><h3>⚡ Générateur</h3><p>Une séance sur mesure en un tap : choisis le temps, le matériel et les muscles, l'app compose l'entraînement.</p><span class="how">Séances → Générer une séance</span></div>
       <div class="feat"><h3>🎬 Séance en cours</h3><p>Suivi série par série, minuteur de repos automatique, pré-remplissage du dernier poids, séries d'échauffement, records célébrés en direct.</p><span class="how">Pendant la séance</span></div>
       <div class="feat"><h3>🔊 Mode salle mains libres</h3><p>Gros boutons, écran allumé, annonces vocales des séries et du repos — idéal en pleine séance.</p><span class="how">En séance → mode salle</span></div>
@@ -119,30 +136,27 @@
       <div class="feat"><h3>➕ Séance libre</h3><p>Démarre sans modèle et ajoute tes exercices à la volée.</p><span class="how">Accueil / Séances → Séance libre</span></div>
     </div>
   </section>
-
   <section id="materiel">
-    <div class="sec-head"><span class="sec-ic">🧰</span><h2>Mon matériel <span class="new">NOUVEAU</span></h2></div>
+    <div class="sec-head"><span class="sec-ic">🧰</span><h2>Mon matériel</h2></div>
     <p class="lead">Renseigne précisément ton matériel : programmes et exercices s'adaptent à ce que tu peux réellement faire.</p>
     <div class="grid">
       <div class="feat"><h3>🎯 Détaille ton équipement</h3><p>Barres (avec leur poids), poids max en disques, haltères (mini/maxi), kettlebells, machines (menu déroulant), élastiques (force). Ajoute même des photos de ton matériel.</p><span class="how">Guide → Mon matériel</span></div>
       <div class="feat"><h3>🔎 Filtre intelligent</h3><p>Rien de coché = tu vois tout. Du matériel coché = seuls les exercices et programmes réalisables sont affichés. Tout est modifiable à tout moment.</p><span class="how">Mon matériel → Filtrer</span></div>
     </div>
   </section>
-
   <section id="callisthenie">
-    <div class="sec-head"><span class="sec-ic">🤸</span><h2>Callisthénie <span class="new">NOUVEAU</span></h2></div>
+    <div class="sec-head"><span class="sec-ic">🤸</span><h2>Callisthénie</h2></div>
     <p class="lead">Un vrai volet poids du corps : programmes progressifs et séances sans matériel.</p>
     <div class="grid">
       <div class="feat"><h3>📋 Programmes dédiés</h3><p>Débutant, intermédiaire, avancé, street workout (barre &amp; dips), skills (L-sit, muscle-up), fessiers, abdos, explosif, mobilité, 30 jours de pompes…</p><span class="how">Programmes</span></div>
       <div class="feat"><h3>🔥 Séances autonomes</h3><p>Poussée maison, tractions &amp; dos, core 10 min, jambes sans matériel, EMOM, HIIT pliométrique, cardio maison… de 10 à 45 min.</p><span class="how">Séances → filtre Callisthénie</span></div>
     </div>
   </section>
-
   <section id="suivi">
     <div class="sec-head"><span class="sec-ic">📈</span><h2>Suivi &amp; progression</h2></div>
     <p class="lead">Visualise tes progrès sous tous les angles.</p>
     <div class="grid">
-      <div class="feat"><h3>📈 Série express au fil de la journée <span class="new">NOUVEAU</span></h3><p>Logue une série d'un exercice en 2 taps, sans créer de séance (« 15 pompes ce matin »). Les exercices réguliers obtiennent une courbe de progression dédiée.</p><span class="how">Accueil → Série express</span></div>
+      <div class="feat"><h3>📈 Série express au fil de la journée</h3><p>Logue une série d'un exercice en 2 taps, sans créer de séance (« 15 pompes ce matin »). Les exercices réguliers obtiennent une courbe de progression dédiée.</p><span class="how">Accueil → Série express</span></div>
       <div class="feat"><h3>📊 Progression par exercice</h3><p>Courbe du 1RM estimé et de la charge sur 4 / 8 / 12 semaines, records de reps, évolution « +X en 3 mois ».</p><span class="how">Progrès → un record</span></div>
       <div class="feat"><h3>🏆 Records &amp; 1RM</h3><p>Records automatiques par exercice, 1RM estimé (Epley), records par nombre de répétitions.</p><span class="how">Progrès</span></div>
       <div class="feat"><h3>🗺️ Carte musculaire &amp; radar</h3><p>Vois quels muscles tu travailles le plus, ton équilibre musculaire et la récupération par groupe.</p><span class="how">Progrès / Guide</span></div>
@@ -150,7 +164,6 @@
       <div class="feat"><h3>⚖️ Corps &amp; photos</h3><p>Poids, tour de taille/bras/cuisses, IMC, et photos avant/après.</p><span class="how">Guide → Mon corps / Photos</span></div>
     </div>
   </section>
-
   <section id="cardio">
     <div class="sec-head"><span class="sec-ic">🏃</span><h2>Cardio &amp; plein air</h2></div>
     <p class="lead">Course, marche, vélo et machines cardio.</p>
@@ -159,19 +172,17 @@
       <div class="feat"><h3>⏱️ Minuteur d'intervalles</h3><p>Tabata, EMOM, circuits personnalisés avec signal sonore.</p><span class="how">Guide → Minuteur</span></div>
     </div>
   </section>
-
   <section id="sante">
     <div class="sec-head"><span class="sec-ic">🩺</span><h2>Santé &amp; récupération</h2></div>
     <p class="lead">Écoute ton corps pour t'entraîner mieux.</p>
     <div class="grid">
-      <div class="feat"><h3>🩺 Point de forme avant séance <span class="new">NOUVEAU</span></h3><p>Optionnel : avant de démarrer, indique ta fatigue et tes zones sensibles (gauche/droite). L'app te met en garde sur les muscles à ménager.</p><span class="how">Réglages → activer • puis au démarrage</span></div>
+      <div class="feat"><h3>🩺 Point de forme avant séance</h3><p>Optionnel : avant de démarrer, indique ta fatigue et tes zones sensibles (gauche/droite). L'app te met en garde sur les muscles à ménager.</p><span class="how">Réglages → activer • puis au démarrage</span></div>
       <div class="feat"><h3>🥗 Nutrition</h3><p>Objectif calories/protéines selon ton but (masse, sèche, maintien) et suivi des apports.</p><span class="how">Guide → Nutrition</span></div>
       <div class="feat"><h3>💊 Suppléments</h3><p>Rappels de prise, gestion des stocks, prise « après séance ».</p><span class="how">Guide → Suppléments</span></div>
       <div class="feat"><h3>😴 Récupération</h3><p>Journal sommeil/énergie/stress + suivi de la récupération musculaire (72 h/48 h).</p><span class="how">Guide → Récupération</span></div>
       <div class="feat"><h3>❤️ Santé (Apple/Health Connect)</h3><p>Synchronise poids et séances avec l'app Santé, en option.</p><span class="how">Guide → Objets connectés</span></div>
     </div>
   </section>
-
   <section id="coaching">
     <div class="sec-head"><span class="sec-ic">🎯</span><h2>Programmes &amp; coaching</h2></div>
     <p class="lead">Un plan clair et une progression pilotée.</p>
@@ -182,7 +193,6 @@
       <div class="feat"><h3>🧑‍🏫 Mode coach</h3><p>Gère plusieurs athlètes, affecte des programmes et note leurs progrès.</p><span class="how">Guide → Coach</span></div>
     </div>
   </section>
-
   <section id="social">
     <div class="sec-head"><span class="sec-ic">🤝</span><h2>Social &amp; motivation</h2></div>
     <p class="lead">Partage et défis, sans compte ni serveur.</p>
@@ -191,33 +201,30 @@
       <div class="feat"><h3>🏅 Ligues, défis &amp; Wrapped</h3><p>XP et quêtes (Bronze → Diamant), défis par code, et ton bilan « Wrapped » annuel.</p><span class="how">Guide</span></div>
     </div>
   </section>
-
   <section id="perso">
     <div class="sec-head"><span class="sec-ic">🎨</span><h2>Personnalisation</h2></div>
     <p class="lead">Fais de Fitcoon la tienne.</p>
     <div class="grid">
-      <div class="feat"><h3>🎨 Style de l'app : Original ou Glossy <span class="new">NOUVEAU</span></h3><p>Choisis l'apparence : le look Original ou le nouveau look « Glossy » (indigo, dégradés brillants, effet verre). Fonctionne en clair et en sombre.</p><span class="how">Réglages → Style de l'app</span></div>
+      <div class="feat"><h3>🎨 Style de l'app : Original ou Glossy</h3><p>Choisis l'apparence : le look Original ou le nouveau look « Glossy » (indigo, dégradés brillants, effet verre). Fonctionne en clair et en sombre.</p><span class="how">Réglages → Style de l'app</span></div>
       <div class="feat"><h3>🌍 9 langues + thème + taille du texte</h3><p>Français, anglais, allemand, italien, portugais, espagnol, suédois, norvégien, finnois. Thème clair/sombre/auto et taille du texte réglables.</p><span class="how">Réglages</span></div>
     </div>
   </section>
-
   <section id="donnees">
     <div class="sec-head"><span class="sec-ic">🔒</span><h2>Données &amp; confidentialité</h2></div>
     <p class="lead">Tes données t'appartiennent — vraiment.</p>
     <div class="grid">
       <div class="feat"><h3>🔒 100 % local &amp; hors-ligne</h3><p>Aucune donnée envoyée sur Internet, aucun compte requis, aucune pub. Tout reste sur ton téléphone.</p><span class="how">Par défaut</span></div>
-      <div class="feat"><h3>🛟 Sauvegarde anti-perte <span class="new">NOUVEAU</span></h3><p>Choisis un dossier (Drive, Téléchargements…) où tes sauvegardes sont copiées automatiquement et <b>survivent à la désinstallation</b>. Restauration en un tap au 1er lancement.</p><span class="how">Réglages → Dossier de sauvegarde</span></div>
+      <div class="feat"><h3>🛟 Sauvegarde anti-perte</h3><p>Choisis un dossier (Drive, Téléchargements…) où tes sauvegardes sont copiées automatiquement et <b>survivent à la désinstallation</b>. Restauration en un tap au 1er lancement.</p><span class="how">Réglages → Dossier de sauvegarde</span></div>
       <div class="feat"><h3>🔁 Mises à jour sans perte</h3><p>Tes données sont conservées à chaque mise à jour, même si tu sautes plusieurs versions.</p><span class="how">Automatique</span></div>
       <div class="feat"><h3>📤 Export</h3><p>Exporte tes données en CSV, JSON ou un rapport PDF complet.</p><span class="how">Guide → Export</span></div>
     </div>
-    <div class="note"><b>Fitcoon ne remplace pas un professionnel de santé.</b> L'app t'accompagne dans ta motivation et ton suivi ; en cas de douleur ou de doute, demande l'avis d'un médecin.</div>
   </section>
-
+  <div class="note" style="margin-top:24px"><b>Fitcoon ne remplace pas un professionnel de santé.</b> L'app t'accompagne dans ta motivation et ton suivi ; en cas de douleur ou de doute, demande l'avis d'un médecin.</div>
 </main>
 
 <footer><div class="wrap">
   <p>Une création <b>Bengacoon</b> · 100 % gratuit, 100 % privé.</p>
-  <a class="cta" href="./">← Retour à l'accueil</a>
+  <a class="cta" href="./">← Retour à l&#x27;accueil</a>
 </div></footer>
 
 </body>

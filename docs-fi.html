@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fitcoon — Täydellinen opas</title>
+<meta name="description" content="Fitcoon on täydellinen treenipäiväkirjasi — voimaharjoittelu, kehonpainoharjoittelu, kardio — 100 % yksityinen ja offline. Tässä on jokainen toiminto ja miten sitä käytetään.">
+<style>
+  :root{
+    --deep:#1B1633; --deep2:#241C4B; --deep3:#3A2E86;
+    --lav:#6C5CE0; --lavB:#8F7BFF; --lavInk:#4A3DAF;
+    --sage:#5FA97E; --sageB:#7FC79C; --sageInk:#3E7D5B;
+    --coral:#FF6B5E; --coralW:#FF8A5B; --gold:#E8B94E;
+    --paper:#F7F6FB; --card:#FFFFFF; --ink:#171526; --mut:#6E6A85; --line:#E7E4F2;
+    --lavT:rgba(108,92,224,.10); --sageT:rgba(95,169,126,.13);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .grad-txt{background:linear-gradient(90deg,#B7A9FF,#8FE3B0);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  nav{position:sticky;top:0;z-index:20;background:rgba(27,22,51,.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+  nav .wrap{display:flex;align-items:center;gap:18px;height:62px}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:17px}
+  .brand .mk{width:30px;height:30px;border-radius:9px;object-fit:cover;display:block}
+  .brand small{display:block;font-size:10px;font-weight:600;color:#A99BE0;letter-spacing:.4px}
+  nav .links{margin-left:auto;display:flex;gap:22px;align-items:center}
+  nav .links a{color:#CFC9EF;font-size:14px;font-weight:600}
+  nav .links a:hover{color:#fff}
+  nav .cta{background:linear-gradient(120deg,var(--lav),var(--lavB));color:#fff !important;padding:9px 16px;border-radius:999px;font-weight:800;font-size:13px}
+  @media(max-width:720px){nav .links a:not(.cta){display:none}}
+
+  header{color:#fff;background:radial-gradient(120% 90% at 15% 0%,#3A2E86 0%,var(--deep2) 45%,var(--deep) 100%);padding:56px 0 44px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);
+    border-radius:999px;padding:6px 13px;font-size:12.5px;font-weight:700;color:#D9D4F2;margin-bottom:16px}
+  header h1{font-size:clamp(28px,5vw,44px);line-height:1.08;margin:.1em 0 .2em;font-weight:900;letter-spacing:-.5px}
+  header p{color:#C9C2E8;font-size:17px;max-width:60ch;margin:0}
+
+  .toc{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .toc a{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;
+    padding:8px 14px;font-size:13.5px;font-weight:700;color:#E7E2FA}
+  .toc a:hover{background:rgba(255,255,255,.16);color:#fff}
+
+  main{padding:12px 0 60px}
+  section{padding:38px 0 8px;border-bottom:1px solid var(--line)}
+  section:last-child{border-bottom:0}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  .sec-ic{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:22px;flex:none;
+    background:var(--lavT);border:1px solid var(--line)}
+  section h2{font-size:23px;font-weight:900;margin:0;letter-spacing:-.3px}
+  .lead{color:var(--mut);margin:2px 0 18px;font-size:15.5px}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 17px;
+    box-shadow:0 6px 16px -12px rgba(40,30,90,.35)}
+  .feat h3{margin:0 0 4px;font-size:16px;font-weight:800;display:flex;align-items:center;gap:8px}
+  .feat p{margin:0;color:#4b4763;font-size:14.5px}
+  .feat .how{margin-top:9px;font-size:13px;color:var(--lavInk);font-weight:600;
+    background:var(--lavT);border-radius:9px;padding:6px 10px;display:inline-block}
+  .new{background:linear-gradient(120deg,var(--sage),var(--sageB));color:#fff;font-size:10px;font-weight:800;
+    padding:2px 8px;border-radius:999px;letter-spacing:.4px;vertical-align:middle}
+
+  .note{background:var(--sageT);border:1px solid rgba(95,169,126,.3);border-radius:14px;padding:14px 16px;margin-top:16px;font-size:14.5px;color:var(--sageInk)}
+  .note b{color:#2f6349}
+
+  footer{background:var(--deep);color:#B7B0D6;padding:34px 0;text-align:center;font-size:13.5px}
+  footer a{color:#CFC9EF;font-weight:700}
+  .cta{display:inline-block;margin-top:8px;background:linear-gradient(120deg,var(--lav),var(--lavB));color:#fff !important;
+    padding:11px 20px;border-radius:999px;font-weight:800;font-size:14px}
+
+  .langbar{display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 12px}
+  .langbar .lic{font-size:15px;line-height:1}
+  .langbar select{appearance:none;-webkit-appearance:none;background:transparent;border:0;color:#EDE9FB;
+    font-size:14px;font-weight:700;padding:2px 22px 2px 4px;cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23EDE9FB' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center}
+  .langbar select:focus{outline:2px solid var(--lavB);outline-offset:2px;border-radius:6px}
+  .langbar select option{color:#171526}
+
+  .langbar{display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 12px}
+  .langbar .lic{font-size:15px;line-height:1}
+  .langbar select{appearance:none;-webkit-appearance:none;background:transparent;border:0;color:#EDE9FB;
+    font-size:14px;font-weight:700;padding:2px 22px 2px 4px;cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23EDE9FB' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center}
+  .langbar select:focus{outline:2px solid var(--lavB);outline-offset:2px;border-radius:6px}
+  .langbar select option{color:#171526}
+</style>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="index.html"><img class="mk" src="assets/icon.png" alt="Fitcoon"><span>Fitcoon<small>par Bengacoon</small></span></a>
+  <div class="links">
+    <a href="index.html#fonctions">Ominaisuudet</a>
+    <a href="docs-fi.html">Opas</a>
+    <a href="index.html#confidentialite">Tietosuoja</a>
+    <a href="index.html#versions">Versiot</a>
+    <a class="cta" href="index.html#telecharger">Lataa</a>
+  </div>
+</div></nav>
+
+<header><div class="wrap">
+  <span class="eyebrow">📖 Täydellinen opas</span>
+  <h1>Kaikki, mitä voit tehdä sovelluksella <span class="grad-txt">Fitcoon</span></h1>
+  <p>Fitcoon on täydellinen treenipäiväkirjasi — voimaharjoittelu, kehonpainoharjoittelu, kardio — 100 % yksityinen ja offline. Tässä on jokainen toiminto ja miten sitä käytetään.</p>
+  <div class="langbar"><span class="lic">🌐</span><select aria-label="Kieli" onchange="if(this.value)location.href=this.value"><option value="docs.html">Français</option><option value="docs-en.html">English</option><option value="docs-de.html">Deutsch</option><option value="docs-it.html">Italiano</option><option value="docs-pt.html">Português</option><option value="docs-es.html">Español</option><option value="docs-sv.html">Svenska</option><option value="docs-no.html">Norsk</option><option value="docs-fi.html" selected>Suomi</option></select></div>
+  <div class="toc">
+    <a href="#entrainement">🏋️ Harjoittelu</a>
+    <a href="#materiel">🧰 Välineeni</a>
+    <a href="#callisthenie">🤸 Kehonpainoharjoittelu</a>
+    <a href="#suivi">📈 Seuranta &amp; edistyminen</a>
+    <a href="#cardio">🏃 Kardio &amp; ulkoilu</a>
+    <a href="#sante">🩺 Terveys &amp; palautuminen</a>
+    <a href="#coaching">🎯 Ohjelmat &amp; valmennus</a>
+    <a href="#social">🤝 Sosiaalinen &amp; motivaatio</a>
+    <a href="#perso">🎨 Mukauttaminen</a>
+    <a href="#donnees">🔒 Tiedot &amp; yksityisyys</a>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <section id="entrainement">
+    <div class="sec-head"><span class="sec-ic">🏋️</span><h2>Harjoittelu</h2></div>
+    <p class="lead">Luo, generoi ja käynnistä voima- ja kehonpainoharjoituksesi.</p>
+    <div class="grid">
+      <div class="feat"><h3>🗂️ Ohjelmat</h3><p>Kymmeniä valmiita ohjelmia (voima, massan kasvatus, määrittely, aloittelija, voimanosto, kehonpaino…), monta viikkoa kestäviä.</p><span class="how">Ohjelmat-välilehti → valitse → aloita</span></div>
+      <div class="feat"><h3>🏋️ Harjoitukset</h3><p>Tallentamasi harjoitukset + valmiit harjoitukset. Suodata lihaksen, keston, alkuperän ja <b>kontekstin Kehonpaino / Sali / Koti</b> mukaan. <span class="new">NEW</span></p><span class="how">Harjoitukset-välilehti → suodata → aloita</span></div>
+      <div class="feat"><h3>⚡ Generaattori</h3><p>Räätälöity harjoitus yhdellä napautuksella: valitse aika, välineet ja lihakset, niin sovellus kokoaa treenin.</p><span class="how">Harjoitukset → Generoi harjoitus</span></div>
+      <div class="feat"><h3>🎬 Käynnissä oleva harjoitus</h3><p>Seuranta sarja sarjalta, automaattinen lepoajastin, viimeisen painon esitäyttö, lämmittelysarjat, ennätykset juhlittuna reaaliajassa.</p><span class="how">Harjoituksen aikana</span></div>
+      <div class="feat"><h3>🔊 Salin kädet vapaana -tila</h3><p>Isot painikkeet, näyttö päällä, sarjojen ja levon ääni-ilmoitukset — ihanteellinen kesken harjoituksen.</p><span class="how">Harjoituksessa → salitila</span></div>
+      <div class="feat"><h3>⚡ WOD ja finisherit</h3><p>AMRAP- / EMOM- / Tabata- / For Time -kiertojen generaattori, ja 10 ohjattua finisheriä vahvaan lopetukseen.</p><span class="how">Opas → WOD / Finisherit</span></div>
+      <div class="feat"><h3>🧘 Liikkuvuus</h3><p>8 ohjattua liikkuvuus- ja venyttelyrutiinia.</p><span class="how">Opas → Liikkuvuus</span></div>
+      <div class="feat"><h3>➕ Vapaa harjoitus</h3><p>Aloita ilman mallia ja lisää liikkeesi lennossa.</p><span class="how">Etusivu / Harjoitukset → Vapaa harjoitus</span></div>
+    </div>
+  </section>
+  <section id="materiel">
+    <div class="sec-head"><span class="sec-ic">🧰</span><h2>Välineeni</h2></div>
+    <p class="lead">Ilmoita välineesi tarkasti: ohjelmat ja liikkeet mukautuvat siihen, mitä todella voit tehdä.</p>
+    <div class="grid">
+      <div class="feat"><h3>🎯 Erittele välineesi</h3><p>Tangot (painoineen), maksimipaino levyinä, käsipainot (min/max), kahvakuulat, laitteet (pudotusvalikko), vastuskuminauhat (voima). Voit jopa lisätä valokuvia välineistäsi.</p><span class="how">Opas → Välineeni</span></div>
+      <div class="feat"><h3>🔎 Älykäs suodatin</h3><p>Mitään ei rastitettu = näet kaiken. Rastitetut välineet = vain toteutettavissa olevat liikkeet ja ohjelmat näytetään. Kaikkea voi muuttaa milloin tahansa.</p><span class="how">Välineeni → Suodata</span></div>
+    </div>
+  </section>
+  <section id="callisthenie">
+    <div class="sec-head"><span class="sec-ic">🤸</span><h2>Kehonpainoharjoittelu</h2></div>
+    <p class="lead">Aito kehonpaino-osio: progressiivisia ohjelmia ja harjoituksia ilman välineitä.</p>
+    <div class="grid">
+      <div class="feat"><h3>📋 Omat ohjelmat</h3><p>Aloittelija, keskitaso, edistynyt, street workout (tanko &amp; dipit), skillit (L-sit, muscle-up), pakarat, vatsa, räjähtävä, liikkuvuus, 30 päivää punnerruksia…</p><span class="how">Ohjelmat</span></div>
+      <div class="feat"><h3>🔥 Itsenäiset harjoitukset</h3><p>Työntöliikkeet kotona, leuanvedot &amp; selkä, keskivartalo 10 min, jalat ilman välineitä, EMOM, plyometrinen HIIT, kardio kotona… 10–45 min.</p><span class="how">Harjoitukset → suodatin Kehonpaino</span></div>
+    </div>
+  </section>
+  <section id="suivi">
+    <div class="sec-head"><span class="sec-ic">📈</span><h2>Seuranta &amp; edistyminen</h2></div>
+    <p class="lead">Näe edistymisesi kaikista näkökulmista.</p>
+    <div class="grid">
+      <div class="feat"><h3>📈 Pikasarja päivän mittaan</h3><p>Kirjaa liikkeen sarja kahdella napautuksella luomatta harjoitusta (”15 punnerrusta tänä aamuna”). Säännölliset liikkeet saavat oman edistymiskäyränsä.</p><span class="how">Etusivu → Pikasarja</span></div>
+      <div class="feat"><h3>📊 Edistyminen liikkeittäin</h3><p>Arvioidun 1RM:n ja kuorman käyrä 4 / 8 / 12 viikon ajalta, toistoennätykset, kehitys ”+X kolmessa kuukaudessa”.</p><span class="how">Edistyminen → ennätys</span></div>
+      <div class="feat"><h3>🏆 Ennätykset &amp; 1RM</h3><p>Automaattiset ennätykset liikkeittäin, arvioitu 1RM (Epley), ennätykset toistomäärittäin.</p><span class="how">Edistyminen</span></div>
+      <div class="feat"><h3>🗺️ Lihaskartta &amp; tutka</h3><p>Näe, mitä lihaksia treenaat eniten, lihastasapainosi ja palautuminen ryhmittäin.</p><span class="how">Edistyminen / Opas</span></div>
+      <div class="feat"><h3>📅 Täydellinen historia</h3><p>Jokainen harjoitus yksityiskohtaisesti, muokattavissa, vinkeillä seuraavaa kertaa varten.</p><span class="how">Edistyminen → Historia</span></div>
+      <div class="feat"><h3>⚖️ Keho &amp; kuvat</h3><p>Paino, vyötärön/käsivarsien/reisien ympärys, BMI ja ennen/jälkeen-kuvat.</p><span class="how">Opas → Kehoni / Kuvat</span></div>
+    </div>
+  </section>
+  <section id="cardio">
+    <div class="sec-head"><span class="sec-ic">🏃</span><h2>Kardio &amp; ulkoilu</h2></div>
+    <p class="lead">Juoksu, kävely, pyöräily ja kardiolaitteet.</p>
+    <div class="grid">
+      <div class="feat"><h3>🛰️ Ulkona GPS:llä</h3><p>Tallenna kävely, juoksu ja lenkit reitin, matkan ja tahdin kanssa (Strava-tyyliin, mutta yksityisesti).</p><span class="how">Harjoitukset → Ulkoilu</span></div>
+      <div class="feat"><h3>⏱️ Intervalliajastin</h3><p>Tabata, EMOM, omat kierrot äänimerkillä.</p><span class="how">Opas → Ajastin</span></div>
+    </div>
+  </section>
+  <section id="sante">
+    <div class="sec-head"><span class="sec-ic">🩺</span><h2>Terveys &amp; palautuminen</h2></div>
+    <p class="lead">Kuuntele kehoasi treenataksesi paremmin.</p>
+    <div class="grid">
+      <div class="feat"><h3>🩺 Kuntocheck ennen harjoitusta</h3><p>Valinnainen: ennen aloitusta ilmoita väsymyksesi ja arat alueesi (vasen/oikea). Sovellus varoittaa sinua lihaksista, joita kannattaa säästää.</p><span class="how">Asetukset → ota käyttöön • sitten aloituksessa</span></div>
+      <div class="feat"><h3>🥗 Ravitsemus</h3><p>Kalori-/proteiinitavoite tavoitteesi mukaan (massa, määrittely, ylläpito) ja saannin seuranta.</p><span class="how">Opas → Ravitsemus</span></div>
+      <div class="feat"><h3>💊 Lisäravinteet</h3><p>Muistutukset otosta, varastonhallinta, otto ”harjoituksen jälkeen”.</p><span class="how">Opas → Lisäravinteet</span></div>
+      <div class="feat"><h3>😴 Palautuminen</h3><p>Uni-/energia-/stressipäiväkirja + lihasten palautumisen seuranta (72 h/48 h).</p><span class="how">Opas → Palautuminen</span></div>
+      <div class="feat"><h3>❤️ Terveys (Apple/Health Connect)</h3><p>Synkronoi paino ja harjoitukset Terveys-sovelluksen kanssa, valinnaisesti.</p><span class="how">Opas → Yhdistetyt laitteet</span></div>
+    </div>
+  </section>
+  <section id="coaching">
+    <div class="sec-head"><span class="sec-ic">🎯</span><h2>Ohjelmat &amp; valmennus</h2></div>
+    <p class="lead">Selkeä suunnitelma ja ohjattu edistyminen.</p>
+    <div class="grid">
+      <div class="feat"><h3>🧠 Valmentaja</h3><p>Automaattinen progressiivinen ylikuormitus (+ paino / + toisto historiasi mukaan), automaattinen lämmittely, kuormaehdotukset.</p><span class="how">Harjoituksessa</span></div>
+      <div class="feat"><h3>🗺️ Suunnittelija &amp; tavoitteet</h3><p>Aseta pitkän aikavälin tavoite ja saat suunnitelman virstanpylväineen ja edistymispolkuineen.</p><span class="how">Opas → Suunnittelija / Tavoitteet</span></div>
+      <div class="feat"><h3>💪 Voimatasot</h3><p>Vertaa 1RM:ääsi standardeihin (Aloittelija → Eliitti) sukupuolesi ja painosi mukaan.</p><span class="how">Opas → Voimatasot</span></div>
+      <div class="feat"><h3>🧑‍🏫 Valmentajatila</h3><p>Hallitse useita urheilijoita, määritä ohjelmia ja kirjaa heidän edistymisensä.</p><span class="how">Opas → Valmentaja</span></div>
+    </div>
+  </section>
+  <section id="social">
+    <div class="sec-head"><span class="sec-ic">🤝</span><h2>Sosiaalinen &amp; motivaatio</h2></div>
+    <p class="lead">Jakaminen ja haasteet, ilman tiliä tai palvelinta.</p>
+    <div class="grid">
+      <div class="feat"><h3>👥 Fitcoon Duo</h3><p>Jaa ohjelma tai harjoitus QR-koodilla / tiedostolla — 100 % offline.</p><span class="how">Opas → Duo</span></div>
+      <div class="feat"><h3>🏅 Liigat, haasteet &amp; Wrapped</h3><p>XP ja tehtävät (Pronssi → Timantti), koodilla jaettavat haasteet, ja vuotuinen ”Wrapped”-yhteenvetosi.</p><span class="how">Opas</span></div>
+    </div>
+  </section>
+  <section id="perso">
+    <div class="sec-head"><span class="sec-ic">🎨</span><h2>Mukauttaminen</h2></div>
+    <p class="lead">Tee Fitcoonista omasi.</p>
+    <div class="grid">
+      <div class="feat"><h3>🎨 Sovelluksen tyyli: Original tai Glossy</h3><p>Valitse ulkoasu: Original-ilme tai uusi ”Glossy”-ilme (indigo, kiiltävät liukuvärit, lasiefekti). Toimii vaaleana ja tummana.</p><span class="how">Asetukset → Sovelluksen tyyli</span></div>
+      <div class="feat"><h3>🌍 9 kieltä + teema + tekstin koko</h3><p>Ranska, englanti, saksa, italia, portugali, espanja, ruotsi, norja, suomi. Vaalea/tumma/automaattinen teema ja tekstin koko säädettävissä.</p><span class="how">Asetukset</span></div>
+    </div>
+  </section>
+  <section id="donnees">
+    <div class="sec-head"><span class="sec-ic">🔒</span><h2>Tiedot &amp; yksityisyys</h2></div>
+    <p class="lead">Tietosi kuuluvat sinulle — oikeasti.</p>
+    <div class="grid">
+      <div class="feat"><h3>🔒 100 % paikallinen &amp; offline</h3><p>Mitään tietoja ei lähetetä internetiin, tiliä ei vaadita, ei mainoksia. Kaikki pysyy puhelimessasi.</p><span class="how">Oletuksena</span></div>
+      <div class="feat"><h3>🛟 Varmuuskopiointi katoamista vastaan</h3><p>Valitse kansio (Drive, Lataukset…), johon varmuuskopiosi kopioidaan automaattisesti ja jotka <b>säilyvät asennuksen poistossa</b>. Palautus yhdellä napautuksella ensimmäisellä käynnistyksellä.</p><span class="how">Asetukset → Varmuuskopiokansio</span></div>
+      <div class="feat"><h3>🔁 Päivitykset ilman katoamista</h3><p>Tietosi säilyvät jokaisessa päivityksessä, vaikka ohittaisit useita versioita.</p><span class="how">Automaattinen</span></div>
+      <div class="feat"><h3>📤 Vienti</h3><p>Vie tietosi muodossa CSV, JSON tai täydellinen PDF-raportti.</p><span class="how">Opas → Vienti</span></div>
+    </div>
+  </section>
+  <div class="note" style="margin-top:24px"><b>Fitcoon ei korvaa terveydenhuollon ammattilaista.</b> Sovellus tukee sinua motivaatiossa ja seurannassa; kivun tai epäilyn ilmetessä kysy lääkärin neuvoa.</div>
+</main>
+
+<footer><div class="wrap">
+  <p><b>Bengacoon</b>-tuote · 100 % ilmainen, 100 % yksityinen.</p>
+  <a class="cta" href="./">← Takaisin etusivulle</a>
+</div></footer>
+
+</body>
+</html>

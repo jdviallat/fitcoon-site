@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fitcoon — Komplett guide</title>
+<meta name="description" content="Fitcoon är din kompletta träningsdagbok — styrketräning, kroppsviktsträning, kondition — 100 % privat och offline. Här är varje funktion och hur du använder den.">
+<style>
+  :root{
+    --deep:#1B1633; --deep2:#241C4B; --deep3:#3A2E86;
+    --lav:#6C5CE0; --lavB:#8F7BFF; --lavInk:#4A3DAF;
+    --sage:#5FA97E; --sageB:#7FC79C; --sageInk:#3E7D5B;
+    --coral:#FF6B5E; --coralW:#FF8A5B; --gold:#E8B94E;
+    --paper:#F7F6FB; --card:#FFFFFF; --ink:#171526; --mut:#6E6A85; --line:#E7E4F2;
+    --lavT:rgba(108,92,224,.10); --sageT:rgba(95,169,126,.13);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .grad-txt{background:linear-gradient(90deg,#B7A9FF,#8FE3B0);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  nav{position:sticky;top:0;z-index:20;background:rgba(27,22,51,.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+  nav .wrap{display:flex;align-items:center;gap:18px;height:62px}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:17px}
+  .brand .mk{width:30px;height:30px;border-radius:9px;object-fit:cover;display:block}
+  .brand small{display:block;font-size:10px;font-weight:600;color:#A99BE0;letter-spacing:.4px}
+  nav .links{margin-left:auto;display:flex;gap:22px;align-items:center}
+  nav .links a{color:#CFC9EF;font-size:14px;font-weight:600}
+  nav .links a:hover{color:#fff}
+  nav .cta{background:linear-gradient(120deg,var(--lav),var(--lavB));color:#fff !important;padding:9px 16px;border-radius:999px;font-weight:800;font-size:13px}
+  @media(max-width:720px){nav .links a:not(.cta){display:none}}
+
+  header{color:#fff;background:radial-gradient(120% 90% at 15% 0%,#3A2E86 0%,var(--deep2) 45%,var(--deep) 100%);padding:56px 0 44px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);
+    border-radius:999px;padding:6px 13px;font-size:12.5px;font-weight:700;color:#D9D4F2;margin-bottom:16px}
+  header h1{font-size:clamp(28px,5vw,44px);line-height:1.08;margin:.1em 0 .2em;font-weight:900;letter-spacing:-.5px}
+  header p{color:#C9C2E8;font-size:17px;max-width:60ch;margin:0}
+
+  .toc{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .toc a{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;
+    padding:8px 14px;font-size:13.5px;font-weight:700;color:#E7E2FA}
+  .toc a:hover{background:rgba(255,255,255,.16);color:#fff}
+
+  main{padding:12px 0 60px}
+  section{padding:38px 0 8px;border-bottom:1px solid var(--line)}
+  section:last-child{border-bottom:0}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  .sec-ic{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:22px;flex:none;
+    background:var(--lavT);border:1px solid var(--line)}
+  section h2{font-size:23px;font-weight:900;margin:0;letter-spacing:-.3px}
+  .lead{color:var(--mut);margin:2px 0 18px;font-size:15.5px}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 17px;
+    box-shadow:0 6px 16px -12px rgba(40,30,90,.35)}
+  .feat h3{margin:0 0 4px;font-size:16px;font-weight:800;display:flex;align-items:center;gap:8px}
+  .feat p{margin:0;color:#4b4763;font-size:14.5px}
+  .feat .how{margin-top:9px;font-size:13px;color:var(--lavInk);font-weight:600;
+    background:var(--lavT);border-radius:9px;padding:6px 10px;display:inline-block}
+  .new{background:linear-gradient(120deg,var(--sage),var(--sageB));color:#fff;font-size:10px;font-weight:800;
+    padding:2px 8px;border-radius:999px;letter-spacing:.4px;vertical-align:middle}
+
+  .note{background:var(--sageT);border:1px solid rgba(95,169,126,.3);border-radius:14px;padding:14px 16px;margin-top:16px;font-size:14.5px;color:var(--sageInk)}
+  .note b{color:#2f6349}
+
+  footer{background:var(--deep);color:#B7B0D6;padding:34px 0;text-align:center;font-size:13.5px}
+  footer a{color:#CFC9EF;font-weight:700}
+  .cta{display:inline-block;margin-top:8px;background:linear-gradient(120deg,var(--lav),var(--lavB));color:#fff !important;
+    padding:11px 20px;border-radius:999px;font-weight:800;font-size:14px}
+
+  .langbar{display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 12px}
+  .langbar .lic{font-size:15px;line-height:1}
+  .langbar select{appearance:none;-webkit-appearance:none;background:transparent;border:0;color:#EDE9FB;
+    font-size:14px;font-weight:700;padding:2px 22px 2px 4px;cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23EDE9FB' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center}
+  .langbar select:focus{outline:2px solid var(--lavB);outline-offset:2px;border-radius:6px}
+  .langbar select option{color:#171526}
+
+  .langbar{display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 12px}
+  .langbar .lic{font-size:15px;line-height:1}
+  .langbar select{appearance:none;-webkit-appearance:none;background:transparent;border:0;color:#EDE9FB;
+    font-size:14px;font-weight:700;padding:2px 22px 2px 4px;cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23EDE9FB' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center}
+  .langbar select:focus{outline:2px solid var(--lavB);outline-offset:2px;border-radius:6px}
+  .langbar select option{color:#171526}
+</style>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="index.html"><img class="mk" src="assets/icon.png" alt="Fitcoon"><span>Fitcoon<small>par Bengacoon</small></span></a>
+  <div class="links">
+    <a href="index.html#fonctions">Funktioner</a>
+    <a href="docs-sv.html">Guide</a>
+    <a href="index.html#confidentialite">Integritet</a>
+    <a href="index.html#versions">Versioner</a>
+    <a class="cta" href="index.html#telecharger">Ladda ner</a>
+  </div>
+</div></nav>
+
+<header><div class="wrap">
+  <span class="eyebrow">📖 Komplett guide</span>
+  <h1>Allt du kan göra med <span class="grad-txt">Fitcoon</span></h1>
+  <p>Fitcoon är din kompletta träningsdagbok — styrketräning, kroppsviktsträning, kondition — 100 % privat och offline. Här är varje funktion och hur du använder den.</p>
+  <div class="langbar"><span class="lic">🌐</span><select aria-label="Språk" onchange="if(this.value)location.href=this.value"><option value="docs.html">Français</option><option value="docs-en.html">English</option><option value="docs-de.html">Deutsch</option><option value="docs-it.html">Italiano</option><option value="docs-pt.html">Português</option><option value="docs-es.html">Español</option><option value="docs-sv.html" selected>Svenska</option><option value="docs-no.html">Norsk</option><option value="docs-fi.html">Suomi</option></select></div>
+  <div class="toc">
+    <a href="#entrainement">🏋️ Träning</a>
+    <a href="#materiel">🧰 Min utrustning</a>
+    <a href="#callisthenie">🤸 Kroppsviktsträning</a>
+    <a href="#suivi">📈 Uppföljning &amp; utveckling</a>
+    <a href="#cardio">🏃 Kondition &amp; utomhus</a>
+    <a href="#sante">🩺 Hälsa &amp; återhämtning</a>
+    <a href="#coaching">🎯 Program &amp; coaching</a>
+    <a href="#social">🤝 Socialt &amp; motivation</a>
+    <a href="#perso">🎨 Anpassning</a>
+    <a href="#donnees">🔒 Data &amp; integritet</a>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <section id="entrainement">
+    <div class="sec-head"><span class="sec-ic">🏋️</span><h2>Träning</h2></div>
+    <p class="lead">Skapa, generera och starta dina styrke- och kroppsviktspass.</p>
+    <div class="grid">
+      <div class="feat"><h3>🗂️ Program</h3><p>Dussintals färdiga program (styrka, muskeluppbyggnad, definition, nybörjare, styrkelyft, kroppsviktsträning…), över flera veckor.</p><span class="how">Fliken Program → välj → starta</span></div>
+      <div class="feat"><h3>🏋️ Pass</h3><p>Dina sparade pass + färdiga pass. Filtrera efter muskel, längd, ursprung och <b>sammanhang Kroppsvikt / Gym / Hemma</b>. <span class="new">NEW</span></p><span class="how">Fliken Pass → filtrera → starta</span></div>
+      <div class="feat"><h3>⚡ Generator</h3><p>Ett skräddarsytt pass med ett tryck: välj tid, utrustning och muskler, så sätter appen ihop träningen.</p><span class="how">Pass → Generera ett pass</span></div>
+      <div class="feat"><h3>🎬 Pågående pass</h3><p>Uppföljning set för set, automatisk vilotimer, förifyllning av senaste vikten, uppvärmningsset, rekord som firas direkt.</p><span class="how">Under passet</span></div>
+      <div class="feat"><h3>🔊 Handsfree-läge för gymmet</h3><p>Stora knappar, skärmen tänd, röstuppläsning av set och vila — perfekt mitt i passet.</p><span class="how">I pass → gymläge</span></div>
+      <div class="feat"><h3>⚡ WOD och finishers</h3><p>Generator för AMRAP- / EMOM- / Tabata- / For Time-cirklar, och 10 guidade finishers för att avsluta starkt.</p><span class="how">Guide → WOD / Finishers</span></div>
+      <div class="feat"><h3>🧘 Rörlighet</h3><p>8 guidade rutiner för rörlighet och stretching.</p><span class="how">Guide → Rörlighet</span></div>
+      <div class="feat"><h3>➕ Fritt pass</h3><p>Starta utan mall och lägg till dina övningar allt eftersom.</p><span class="how">Start / Pass → Fritt pass</span></div>
+    </div>
+  </section>
+  <section id="materiel">
+    <div class="sec-head"><span class="sec-ic">🧰</span><h2>Min utrustning</h2></div>
+    <p class="lead">Ange din utrustning exakt: program och övningar anpassar sig efter vad du faktiskt kan göra.</p>
+    <div class="grid">
+      <div class="feat"><h3>🎯 Detaljera din utrustning</h3><p>Skivstänger (med sin vikt), max vikt i viktskivor, hantlar (min/max), kettlebells, maskiner (rullgardinsmeny), gummiband (styrka). Du kan till och med lägga till foton på din utrustning.</p><span class="how">Guide → Min utrustning</span></div>
+      <div class="feat"><h3>🔎 Smart filter</h3><p>Inget markerat = du ser allt. Markerad utrustning = endast genomförbara övningar och program visas. Allt går att ändra när som helst.</p><span class="how">Min utrustning → Filtrera</span></div>
+    </div>
+  </section>
+  <section id="callisthenie">
+    <div class="sec-head"><span class="sec-ic">🤸</span><h2>Kroppsviktsträning</h2></div>
+    <p class="lead">En riktig kroppsviktsdel: progressiva program och pass utan utrustning.</p>
+    <div class="grid">
+      <div class="feat"><h3>📋 Dedikerade program</h3><p>Nybörjare, medel, avancerad, street workout (räcke &amp; dips), skills (L-sit, muscle-up), säte, mage, explosivt, rörlighet, 30 dagars armhävningar…</p><span class="how">Program</span></div>
+      <div class="feat"><h3>🔥 Fristående pass</h3><p>Tryckövningar hemma, pull-ups &amp; rygg, core 10 min, ben utan utrustning, EMOM, pliometrisk HIIT, kondition hemma… från 10 till 45 min.</p><span class="how">Pass → filter Kroppsvikt</span></div>
+    </div>
+  </section>
+  <section id="suivi">
+    <div class="sec-head"><span class="sec-ic">📈</span><h2>Uppföljning &amp; utveckling</h2></div>
+    <p class="lead">Se dina framsteg ur alla vinklar.</p>
+    <div class="grid">
+      <div class="feat"><h3>📈 Snabbset under dagen</h3><p>Logga ett set av en övning med 2 tryck, utan att skapa ett pass (”15 armhävningar i morse”). Regelbundna övningar får en egen utvecklingskurva.</p><span class="how">Start → Snabbset</span></div>
+      <div class="feat"><h3>📊 Utveckling per övning</h3><p>Kurva över uppskattat 1RM och belastning över 4 / 8 / 12 veckor, repsrekord, utveckling ”+X på 3 månader”.</p><span class="how">Framsteg → ett rekord</span></div>
+      <div class="feat"><h3>🏆 Rekord &amp; 1RM</h3><p>Automatiska rekord per övning, uppskattat 1RM (Epley), rekord per antal repetitioner.</p><span class="how">Framsteg</span></div>
+      <div class="feat"><h3>🗺️ Muskelkarta &amp; radar</h3><p>Se vilka muskler du tränar mest, din muskelbalans och återhämtningen per grupp.</p><span class="how">Framsteg / Guide</span></div>
+      <div class="feat"><h3>📅 Komplett historik</h3><p>Varje pass i detalj, redigerbart, med tips inför nästa gång.</p><span class="how">Framsteg → Historik</span></div>
+      <div class="feat"><h3>⚖️ Kropp &amp; foton</h3><p>Vikt, midje-/arm-/låromfång, BMI och före/efter-foton.</p><span class="how">Guide → Min kropp / Foton</span></div>
+    </div>
+  </section>
+  <section id="cardio">
+    <div class="sec-head"><span class="sec-ic">🏃</span><h2>Kondition &amp; utomhus</h2></div>
+    <p class="lead">Löpning, promenad, cykling och konditionsmaskiner.</p>
+    <div class="grid">
+      <div class="feat"><h3>🛰️ Utomhus med GPS</h3><p>Registrera promenad, löpning och turer med rutt, distans och tempo (i Strava-stil, men privat).</p><span class="how">Pass → Utomhus</span></div>
+      <div class="feat"><h3>⏱️ Intervalltimer</h3><p>Tabata, EMOM, egna cirklar med ljudsignal.</p><span class="how">Guide → Timer</span></div>
+    </div>
+  </section>
+  <section id="sante">
+    <div class="sec-head"><span class="sec-ic">🩺</span><h2>Hälsa &amp; återhämtning</h2></div>
+    <p class="lead">Lyssna på din kropp för att träna bättre.</p>
+    <div class="grid">
+      <div class="feat"><h3>🩺 Formcheck före passet</h3><p>Valfritt: innan du startar, ange din trötthet och dina ömma områden (vänster/höger). Appen varnar dig om vilka muskler du bör skona.</p><span class="how">Inställningar → aktivera • sedan vid start</span></div>
+      <div class="feat"><h3>🥗 Kost</h3><p>Mål för kalorier/protein utifrån ditt mål (massa, definition, underhåll) och uppföljning av intaget.</p><span class="how">Guide → Kost</span></div>
+      <div class="feat"><h3>💊 Kosttillskott</h3><p>Påminnelser om intag, lagerhantering, intag ”efter passet”.</p><span class="how">Guide → Kosttillskott</span></div>
+      <div class="feat"><h3>😴 Återhämtning</h3><p>Dagbok för sömn/energi/stress + uppföljning av muskelåterhämtning (72 h/48 h).</p><span class="how">Guide → Återhämtning</span></div>
+      <div class="feat"><h3>❤️ Hälsa (Apple/Health Connect)</h3><p>Synkronisera vikt och pass med Hälsa-appen, som tillval.</p><span class="how">Guide → Anslutna enheter</span></div>
+    </div>
+  </section>
+  <section id="coaching">
+    <div class="sec-head"><span class="sec-ic">🎯</span><h2>Program &amp; coaching</h2></div>
+    <p class="lead">En tydlig plan och en styrd utveckling.</p>
+    <div class="grid">
+      <div class="feat"><h3>🧠 Coach</h3><p>Automatisk progressiv överbelastning (+ vikt / + rep utifrån din historik), automatisk uppvärmning, viktförslag.</p><span class="how">I pass</span></div>
+      <div class="feat"><h3>🗺️ Planerare &amp; mål</h3><p>Sätt ett långsiktigt mål och få en plan med delmål och utvecklingsbana.</p><span class="how">Guide → Planerare / Mål</span></div>
+      <div class="feat"><h3>💪 Styrkenivåer</h3><p>Jämför ditt 1RM med standarderna (Nybörjare → Elit) utifrån ditt kön och din vikt.</p><span class="how">Guide → Styrkenivåer</span></div>
+      <div class="feat"><h3>🧑‍🏫 Coach-läge</h3><p>Hantera flera atleter, tilldela program och notera deras framsteg.</p><span class="how">Guide → Coach</span></div>
+    </div>
+  </section>
+  <section id="social">
+    <div class="sec-head"><span class="sec-ic">🤝</span><h2>Socialt &amp; motivation</h2></div>
+    <p class="lead">Dela och utmaningar, utan konto eller server.</p>
+    <div class="grid">
+      <div class="feat"><h3>👥 Fitcoon Duo</h3><p>Dela ett program eller ett pass via QR-kod / fil — 100 % offline.</p><span class="how">Guide → Duo</span></div>
+      <div class="feat"><h3>🏅 Ligor, utmaningar &amp; Wrapped</h3><p>XP och uppdrag (Brons → Diamant), utmaningar via kod, och din årliga ”Wrapped”-sammanfattning.</p><span class="how">Guide</span></div>
+    </div>
+  </section>
+  <section id="perso">
+    <div class="sec-head"><span class="sec-ic">🎨</span><h2>Anpassning</h2></div>
+    <p class="lead">Gör Fitcoon till din egen.</p>
+    <div class="grid">
+      <div class="feat"><h3>🎨 Appens stil: Original eller Glossy</h3><p>Välj utseende: Original-looken eller den nya ”Glossy”-looken (indigo, blanka gradienter, glaseffekt). Fungerar i ljust och mörkt.</p><span class="how">Inställningar → Appens stil</span></div>
+      <div class="feat"><h3>🌍 9 språk + tema + textstorlek</h3><p>Franska, engelska, tyska, italienska, portugisiska, spanska, svenska, norska, finska. Ljust/mörkt/automatiskt tema och textstorlek går att ställa in.</p><span class="how">Inställningar</span></div>
+    </div>
+  </section>
+  <section id="donnees">
+    <div class="sec-head"><span class="sec-ic">🔒</span><h2>Data &amp; integritet</h2></div>
+    <p class="lead">Din data tillhör dig — på riktigt.</p>
+    <div class="grid">
+      <div class="feat"><h3>🔒 100 % lokalt &amp; offline</h3><p>Ingen data skickas till internet, inget konto krävs, ingen reklam. Allt stannar på din telefon.</p><span class="how">Som standard</span></div>
+      <div class="feat"><h3>🛟 Säkerhetskopiering mot dataförlust</h3><p>Välj en mapp (Drive, Nedladdningar…) dit dina säkerhetskopior kopieras automatiskt och <b>överlever avinstallation</b>. Återställning med ett tryck vid första starten.</p><span class="how">Inställningar → Mapp för säkerhetskopior</span></div>
+      <div class="feat"><h3>🔁 Uppdateringar utan dataförlust</h3><p>Din data bevaras vid varje uppdatering, även om du hoppar över flera versioner.</p><span class="how">Automatiskt</span></div>
+      <div class="feat"><h3>📤 Export</h3><p>Exportera din data som CSV, JSON eller en komplett PDF-rapport.</p><span class="how">Guide → Export</span></div>
+    </div>
+  </section>
+  <div class="note" style="margin-top:24px"><b>Fitcoon ersätter inte en vårdpersonal.</b> Appen stöttar dig i din motivation och din uppföljning; vid smärta eller tveksamhet, sök råd hos en läkare.</div>
+</main>
+
+<footer><div class="wrap">
+  <p>Skapad av <b>Bengacoon</b> · 100 % gratis, 100 % privat.</p>
+  <a class="cta" href="./">← Tillbaka till start</a>
+</div></footer>
+
+</body>
+</html>

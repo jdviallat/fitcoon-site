@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fitcoon — Komplett guide</title>
+<meta name="description" content="Fitcoon er din komplette treningsdagbok — styrketrening, kroppsvektstrening, kondisjon — 100 % privat og offline. Her er hver funksjon og hvordan du bruker den.">
+<style>
+  :root{
+    --deep:#1B1633; --deep2:#241C4B; --deep3:#3A2E86;
+    --lav:#6C5CE0; --lavB:#8F7BFF; --lavInk:#4A3DAF;
+    --sage:#5FA97E; --sageB:#7FC79C; --sageInk:#3E7D5B;
+    --coral:#FF6B5E; --coralW:#FF8A5B; --gold:#E8B94E;
+    --paper:#F7F6FB; --card:#FFFFFF; --ink:#171526; --mut:#6E6A85; --line:#E7E4F2;
+    --lavT:rgba(108,92,224,.10); --sageT:rgba(95,169,126,.13);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .grad-txt{background:linear-gradient(90deg,#B7A9FF,#8FE3B0);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  nav{position:sticky;top:0;z-index:20;background:rgba(27,22,51,.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+  nav .wrap{display:flex;align-items:center;gap:18px;height:62px}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:17px}
+  .brand .mk{width:30px;height:30px;border-radius:9px;object-fit:cover;display:block}
+  .brand small{display:block;font-size:10px;font-weight:600;color:#A99BE0;letter-spacing:.4px}
+  nav .links{margin-left:auto;display:flex;gap:22px;align-items:center}
+  nav .links a{color:#CFC9EF;font-size:14px;font-weight:600}
+  nav .links a:hover{color:#fff}
+  nav .cta{background:linear-gradient(120deg,var(--lav),var(--lavB));color:#fff !important;padding:9px 16px;border-radius:999px;font-weight:800;font-size:13px}
+  @media(max-width:720px){nav .links a:not(.cta){display:none}}
+
+  header{color:#fff;background:radial-gradient(120% 90% at 15% 0%,#3A2E86 0%,var(--deep2) 45%,var(--deep) 100%);padding:56px 0 44px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);
+    border-radius:999px;padding:6px 13px;font-size:12.5px;font-weight:700;color:#D9D4F2;margin-bottom:16px}
+  header h1{font-size:clamp(28px,5vw,44px);line-height:1.08;margin:.1em 0 .2em;font-weight:900;letter-spacing:-.5px}
+  header p{color:#C9C2E8;font-size:17px;max-width:60ch;margin:0}
+
+  .toc{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .toc a{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;
+    padding:8px 14px;font-size:13.5px;font-weight:700;color:#E7E2FA}
+  .toc a:hover{background:rgba(255,255,255,.16);color:#fff}
+
+  main{padding:12px 0 60px}
+  section{padding:38px 0 8px;border-bottom:1px solid var(--line)}
+  section:last-child{border-bottom:0}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  .sec-ic{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:22px;flex:none;
+    background:var(--lavT);border:1px solid var(--line)}
+  section h2{font-size:23px;font-weight:900;margin:0;letter-spacing:-.3px}
+  .lead{color:var(--mut);margin:2px 0 18px;font-size:15.5px}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 17px;
+    box-shadow:0 6px 16px -12px rgba(40,30,90,.35)}
+  .feat h3{margin:0 0 4px;font-size:16px;font-weight:800;display:flex;align-items:center;gap:8px}
+  .feat p{margin:0;color:#4b4763;font-size:14.5px}
+  .feat .how{margin-top:9px;font-size:13px;color:var(--lavInk);font-weight:600;
+    background:var(--lavT);border-radius:9px;padding:6px 10px;display:inline-block}
+  .new{background:linear-gradient(120deg,var(--sage),var(--sageB));color:#fff;font-size:10px;font-weight:800;
+    padding:2px 8px;border-radius:999px;letter-spacing:.4px;vertical-align:middle}
+
+  .note{background:var(--sageT);border:1px solid rgba(95,169,126,.3);border-radius:14px;padding:14px 16px;margin-top:16px;font-size:14.5px;color:var(--sageInk)}
+  .note b{color:#2f6349}
+
+  footer{background:var(--deep);color:#B7B0D6;padding:34px 0;text-align:center;font-size:13.5px}
+  footer a{color:#CFC9EF;font-weight:700}
+  .cta{display:inline-block;margin-top:8px;background:linear-gradient(120deg,var(--lav),var(--lavB));color:#fff !important;
+    padding:11px 20px;border-radius:999px;font-weight:800;font-size:14px}
+
+  .langbar{display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 12px}
+  .langbar .lic{font-size:15px;line-height:1}
+  .langbar select{appearance:none;-webkit-appearance:none;background:transparent;border:0;color:#EDE9FB;
+    font-size:14px;font-weight:700;padding:2px 22px 2px 4px;cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23EDE9FB' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center}
+  .langbar select:focus{outline:2px solid var(--lavB);outline-offset:2px;border-radius:6px}
+  .langbar select option{color:#171526}
+
+  .langbar{display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 12px}
+  .langbar .lic{font-size:15px;line-height:1}
+  .langbar select{appearance:none;-webkit-appearance:none;background:transparent;border:0;color:#EDE9FB;
+    font-size:14px;font-weight:700;padding:2px 22px 2px 4px;cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23EDE9FB' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center}
+  .langbar select:focus{outline:2px solid var(--lavB);outline-offset:2px;border-radius:6px}
+  .langbar select option{color:#171526}
+</style>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="index.html"><img class="mk" src="assets/icon.png" alt="Fitcoon"><span>Fitcoon<small>par Bengacoon</small></span></a>
+  <div class="links">
+    <a href="index.html#fonctions">Funksjoner</a>
+    <a href="docs-no.html">Guide</a>
+    <a href="index.html#confidentialite">Personvern</a>
+    <a href="index.html#versions">Versjoner</a>
+    <a class="cta" href="index.html#telecharger">Last ned</a>
+  </div>
+</div></nav>
+
+<header><div class="wrap">
+  <span class="eyebrow">📖 Komplett guide</span>
+  <h1>Alt du kan gjøre med <span class="grad-txt">Fitcoon</span></h1>
+  <p>Fitcoon er din komplette treningsdagbok — styrketrening, kroppsvektstrening, kondisjon — 100 % privat og offline. Her er hver funksjon og hvordan du bruker den.</p>
+  <div class="langbar"><span class="lic">🌐</span><select aria-label="Språk" onchange="if(this.value)location.href=this.value"><option value="docs.html">Français</option><option value="docs-en.html">English</option><option value="docs-de.html">Deutsch</option><option value="docs-it.html">Italiano</option><option value="docs-pt.html">Português</option><option value="docs-es.html">Español</option><option value="docs-sv.html">Svenska</option><option value="docs-no.html" selected>Norsk</option><option value="docs-fi.html">Suomi</option></select></div>
+  <div class="toc">
+    <a href="#entrainement">🏋️ Trening</a>
+    <a href="#materiel">🧰 Utstyret mitt</a>
+    <a href="#callisthenie">🤸 Kroppsvektstrening</a>
+    <a href="#suivi">📈 Oppfølging &amp; framgang</a>
+    <a href="#cardio">🏃 Kondisjon &amp; utendørs</a>
+    <a href="#sante">🩺 Helse &amp; restitusjon</a>
+    <a href="#coaching">🎯 Programmer &amp; coaching</a>
+    <a href="#social">🤝 Sosialt &amp; motivasjon</a>
+    <a href="#perso">🎨 Tilpasning</a>
+    <a href="#donnees">🔒 Data &amp; personvern</a>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <section id="entrainement">
+    <div class="sec-head"><span class="sec-ic">🏋️</span><h2>Trening</h2></div>
+    <p class="lead">Lag, generer og start styrke- og kroppsvektsøktene dine.</p>
+    <div class="grid">
+      <div class="feat"><h3>🗂️ Programmer</h3><p>Dusinvis av ferdige programmer (styrke, muskelvekst, definisjon, nybegynner, styrkeløft, kroppsvektstrening…), over flere uker.</p><span class="how">Fanen Programmer → velg → start</span></div>
+      <div class="feat"><h3>🏋️ Økter</h3><p>Dine lagrede økter + ferdige økter. Filtrer etter muskel, varighet, opphav og <b>kontekst Kroppsvekt / Treningssenter / Hjemme</b>. <span class="new">NEW</span></p><span class="how">Fanen Økter → filtrer → start</span></div>
+      <div class="feat"><h3>⚡ Generator</h3><p>En skreddersydd økt med ett trykk: velg tid, utstyr og muskler, så setter appen sammen treningen.</p><span class="how">Økter → Generer en økt</span></div>
+      <div class="feat"><h3>🎬 Pågående økt</h3><p>Oppfølging sett for sett, automatisk hviletimer, forhåndsutfylling av siste vekt, oppvarmingssett, rekorder som feires direkte.</p><span class="how">Under økten</span></div>
+      <div class="feat"><h3>🔊 Håndfrimodus for treningssenteret</h3><p>Store knapper, skjermen på, taleopplesning av sett og hvile — perfekt midt i økten.</p><span class="how">I økt → senter-modus</span></div>
+      <div class="feat"><h3>⚡ WOD og finishere</h3><p>Generator for AMRAP- / EMOM- / Tabata- / For Time-sirkler, og 10 guidede finishere for å avslutte sterkt.</p><span class="how">Guide → WOD / Finishere</span></div>
+      <div class="feat"><h3>🧘 Bevegelighet</h3><p>8 guidede rutiner for bevegelighet og tøying.</p><span class="how">Guide → Bevegelighet</span></div>
+      <div class="feat"><h3>➕ Fri økt</h3><p>Start uten mal og legg til øvelsene dine underveis.</p><span class="how">Hjem / Økter → Fri økt</span></div>
+    </div>
+  </section>
+  <section id="materiel">
+    <div class="sec-head"><span class="sec-ic">🧰</span><h2>Utstyret mitt</h2></div>
+    <p class="lead">Angi utstyret ditt nøyaktig: programmer og øvelser tilpasser seg det du faktisk kan gjøre.</p>
+    <div class="grid">
+      <div class="feat"><h3>🎯 Spesifiser utstyret ditt</h3><p>Stenger (med vekten deres), maks vekt i vektskiver, manualer (min/maks), kettlebells, maskiner (nedtrekksmeny), strikk (styrke). Du kan til og med legge til bilder av utstyret ditt.</p><span class="how">Guide → Utstyret mitt</span></div>
+      <div class="feat"><h3>🔎 Smart filter</h3><p>Ingenting avkrysset = du ser alt. Avkrysset utstyr = bare gjennomførbare øvelser og programmer vises. Alt kan endres når som helst.</p><span class="how">Utstyret mitt → Filtrer</span></div>
+    </div>
+  </section>
+  <section id="callisthenie">
+    <div class="sec-head"><span class="sec-ic">🤸</span><h2>Kroppsvektstrening</h2></div>
+    <p class="lead">En ekte kroppsvektsdel: progressive programmer og økter uten utstyr.</p>
+    <div class="grid">
+      <div class="feat"><h3>📋 Dedikerte programmer</h3><p>Nybegynner, middels, avansert, street workout (stang &amp; dips), skills (L-sit, muscle-up), sete, mage, eksplosivt, bevegelighet, 30 dager med push-ups…</p><span class="how">Programmer</span></div>
+      <div class="feat"><h3>🔥 Frittstående økter</h3><p>Pressøvelser hjemme, pull-ups &amp; rygg, core 10 min, bein uten utstyr, EMOM, pliometrisk HIIT, kondisjon hjemme… fra 10 til 45 min.</p><span class="how">Økter → filter Kroppsvekt</span></div>
+    </div>
+  </section>
+  <section id="suivi">
+    <div class="sec-head"><span class="sec-ic">📈</span><h2>Oppfølging &amp; framgang</h2></div>
+    <p class="lead">Se framgangen din fra alle vinkler.</p>
+    <div class="grid">
+      <div class="feat"><h3>📈 Kjapt sett i løpet av dagen</h3><p>Loggfør et sett av en øvelse med 2 trykk, uten å lage en økt («15 push-ups i morges»). Faste øvelser får en egen framgangskurve.</p><span class="how">Hjem → Kjapt sett</span></div>
+      <div class="feat"><h3>📊 Framgang per øvelse</h3><p>Kurve over estimert 1RM og belastning over 4 / 8 / 12 uker, reps-rekorder, utvikling «+X på 3 måneder».</p><span class="how">Framgang → en rekord</span></div>
+      <div class="feat"><h3>🏆 Rekorder &amp; 1RM</h3><p>Automatiske rekorder per øvelse, estimert 1RM (Epley), rekorder per antall repetisjoner.</p><span class="how">Framgang</span></div>
+      <div class="feat"><h3>🗺️ Muskelkart &amp; radar</h3><p>Se hvilke muskler du trener mest, muskelbalansen din og restitusjonen per gruppe.</p><span class="how">Framgang / Guide</span></div>
+      <div class="feat"><h3>📅 Komplett historikk</h3><p>Hver økt i detalj, redigerbar, med tips til neste gang.</p><span class="how">Framgang → Historikk</span></div>
+      <div class="feat"><h3>⚖️ Kropp &amp; bilder</h3><p>Vekt, livvidde/arm-/lårmål, BMI og før/etter-bilder.</p><span class="how">Guide → Kroppen min / Bilder</span></div>
+    </div>
+  </section>
+  <section id="cardio">
+    <div class="sec-head"><span class="sec-ic">🏃</span><h2>Kondisjon &amp; utendørs</h2></div>
+    <p class="lead">Løping, gåing, sykling og kondisjonsmaskiner.</p>
+    <div class="grid">
+      <div class="feat"><h3>🛰️ Utendørs med GPS</h3><p>Registrer gåing, løping og turer med rute, distanse og tempo (Strava-stil, men privat).</p><span class="how">Økter → Utendørs</span></div>
+      <div class="feat"><h3>⏱️ Intervalltimer</h3><p>Tabata, EMOM, egendefinerte sirkler med lydsignal.</p><span class="how">Guide → Timer</span></div>
+    </div>
+  </section>
+  <section id="sante">
+    <div class="sec-head"><span class="sec-ic">🩺</span><h2>Helse &amp; restitusjon</h2></div>
+    <p class="lead">Lytt til kroppen din for å trene bedre.</p>
+    <div class="grid">
+      <div class="feat"><h3>🩺 Formsjekk før økten</h3><p>Valgfritt: før du starter, angi trettheten din og de ømme områdene dine (venstre/høyre). Appen advarer deg om hvilke muskler du bør skåne.</p><span class="how">Innstillinger → aktiver • deretter ved start</span></div>
+      <div class="feat"><h3>🥗 Ernæring</h3><p>Mål for kalorier/protein etter målet ditt (masse, definisjon, vedlikehold) og oppfølging av inntaket.</p><span class="how">Guide → Ernæring</span></div>
+      <div class="feat"><h3>💊 Kosttilskudd</h3><p>Påminnelser om inntak, lagerstyring, inntak «etter økten».</p><span class="how">Guide → Kosttilskudd</span></div>
+      <div class="feat"><h3>😴 Restitusjon</h3><p>Dagbok for søvn/energi/stress + oppfølging av muskelrestitusjon (72 t/48 t).</p><span class="how">Guide → Restitusjon</span></div>
+      <div class="feat"><h3>❤️ Helse (Apple/Health Connect)</h3><p>Synkroniser vekt og økter med Helse-appen, som tilvalg.</p><span class="how">Guide → Tilkoblede enheter</span></div>
+    </div>
+  </section>
+  <section id="coaching">
+    <div class="sec-head"><span class="sec-ic">🎯</span><h2>Programmer &amp; coaching</h2></div>
+    <p class="lead">En tydelig plan og en styrt framgang.</p>
+    <div class="grid">
+      <div class="feat"><h3>🧠 Coach</h3><p>Automatisk progressiv overbelastning (+ vekt / + rep etter historikken din), automatisk oppvarming, vektforslag.</p><span class="how">I økt</span></div>
+      <div class="feat"><h3>🗺️ Planlegger &amp; mål</h3><p>Sett et langsiktig mål og få en plan med milepæler og framgangsbane.</p><span class="how">Guide → Planlegger / Mål</span></div>
+      <div class="feat"><h3>💪 Styrkenivåer</h3><p>Sammenlign ditt 1RM med standardene (Nybegynner → Elite) etter kjønn og vekt.</p><span class="how">Guide → Styrkenivåer</span></div>
+      <div class="feat"><h3>🧑‍🏫 Coach-modus</h3><p>Administrer flere utøvere, tildel programmer og noter framgangen deres.</p><span class="how">Guide → Coach</span></div>
+    </div>
+  </section>
+  <section id="social">
+    <div class="sec-head"><span class="sec-ic">🤝</span><h2>Sosialt &amp; motivasjon</h2></div>
+    <p class="lead">Deling og utfordringer, uten konto eller server.</p>
+    <div class="grid">
+      <div class="feat"><h3>👥 Fitcoon Duo</h3><p>Del et program eller en økt via QR-kode / fil — 100 % offline.</p><span class="how">Guide → Duo</span></div>
+      <div class="feat"><h3>🏅 Ligaer, utfordringer &amp; Wrapped</h3><p>XP og oppdrag (Bronse → Diamant), utfordringer via kode, og din årlige «Wrapped»-oppsummering.</p><span class="how">Guide</span></div>
+    </div>
+  </section>
+  <section id="perso">
+    <div class="sec-head"><span class="sec-ic">🎨</span><h2>Tilpasning</h2></div>
+    <p class="lead">Gjør Fitcoon til din egen.</p>
+    <div class="grid">
+      <div class="feat"><h3>🎨 Appens stil: Original eller Glossy</h3><p>Velg utseendet: Original-looken eller den nye «Glossy»-looken (indigo, blanke gradienter, glasseffekt). Fungerer i lyst og mørkt.</p><span class="how">Innstillinger → Appens stil</span></div>
+      <div class="feat"><h3>🌍 9 språk + tema + tekststørrelse</h3><p>Fransk, engelsk, tysk, italiensk, portugisisk, spansk, svensk, norsk, finsk. Lyst/mørkt/automatisk tema og tekststørrelse kan justeres.</p><span class="how">Innstillinger</span></div>
+    </div>
+  </section>
+  <section id="donnees">
+    <div class="sec-head"><span class="sec-ic">🔒</span><h2>Data &amp; personvern</h2></div>
+    <p class="lead">Dataene dine tilhører deg — på ordentlig.</p>
+    <div class="grid">
+      <div class="feat"><h3>🔒 100 % lokalt &amp; offline</h3><p>Ingen data sendes til internett, ingen konto kreves, ingen reklame. Alt blir værende på telefonen din.</p><span class="how">Som standard</span></div>
+      <div class="feat"><h3>🛟 Sikkerhetskopi mot datatap</h3><p>Velg en mappe (Drive, Nedlastinger…) der sikkerhetskopiene dine kopieres automatisk og <b>overlever avinstallering</b>. Gjenoppretting med ett trykk ved første oppstart.</p><span class="how">Innstillinger → Mappe for sikkerhetskopi</span></div>
+      <div class="feat"><h3>🔁 Oppdateringer uten datatap</h3><p>Dataene dine bevares ved hver oppdatering, selv om du hopper over flere versjoner.</p><span class="how">Automatisk</span></div>
+      <div class="feat"><h3>📤 Eksport</h3><p>Eksporter dataene dine som CSV, JSON eller en komplett PDF-rapport.</p><span class="how">Guide → Eksport</span></div>
+    </div>
+  </section>
+  <div class="note" style="margin-top:24px"><b>Fitcoon erstatter ikke helsepersonell.</b> Appen støtter deg i motivasjonen og oppfølgingen din; ved smerte eller tvil, søk råd hos en lege.</div>
+</main>
+
+<footer><div class="wrap">
+  <p>Laget av <b>Bengacoon</b> · 100 % gratis, 100 % privat.</p>
+  <a class="cta" href="./">← Tilbake til start</a>
+</div></footer>
+
+</body>
+</html>
